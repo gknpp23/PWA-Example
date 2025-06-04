@@ -1,0 +1,16 @@
+.status-indicator {
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.online {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+
+.offline {
+  background-color: #dc3545; /* Vermelho */
+  color: white;
+}

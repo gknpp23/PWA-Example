@@ -1,13 +1,19 @@
-import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection, isDevMode } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { App } from './app'; // Seu componente raiz, ex: app.component.ts
+
+// Importações dos novos componentes
+import { InstallButton } from './install-button/install-button.component';
+import { OnlineStatusIndicator } from './online-status-indicator/online-status-indicator.component';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    InstallButton,    // Componente para o botão de instalação
+    OnlineStatusIndicator // Componente para o indicador de status online/offline
   ],
   imports: [
     BrowserModule,
@@ -20,8 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     })
   ],
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection()
+    
   ],
   bootstrap: [App]
 })
